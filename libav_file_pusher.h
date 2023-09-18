@@ -81,10 +81,6 @@ class libavPusher {
             return 0;
         }
 
-        ~pushProcessor(){
-            Finish();
-        }
-
         pushProcessor(std::string output_url, AVFormatContext *input_context){
             int ret = 0;
             const char* format_name = NULL;
@@ -168,8 +164,8 @@ class libavPusher {
 
 public: 
     
-    libavPusher(std::string input_filename, std::istream& output_url_list){
-        avformat_network_init();
+    libavPusher(const std::string& input_filename, std::istream& output_url_list){
+        // avformat_network_init();
         int ret = 0;
 
         if ((ret = avformat_open_input(&ifmt_ctx, input_filename.c_str(), 0, 0)) < 0) {
