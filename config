@@ -1,0 +1,3 @@
+rtsp://0.0.0.0:8554/live/uno
+rtmp://0.0.0.0:1935/live/dos
+udp://0.0.0.0:8556/live/tres
